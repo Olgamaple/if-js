@@ -85,31 +85,17 @@ function sum(a) {
 
 console.log(sum(5)(2));
 
-const arr5 = [12, 53, 20, 18, 22, 10, 43, 57, 50, 1];
-const func = (array) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (array[i] % 10 === 0) {
-      array[i] = array[i].toString().replaceAll('0', 'zero');
-    }
-  }
-  return array;
-};
-console.log(func(arr5));
-
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const pGroup = document.querySelectorAll('p');
+const groupEl = document.querySelectorAll('p');
 const f1 = () => {
-  let k = 0;
+  let counter = 0;
   return event => {
-    event.target.style.color = colors[k];
-    k++;
-    if (k === colors.length) {
-      k = 0;
-    }
+    event.target.style.color = colors[counter];
+    counter = counter === colors.length ? 0 : counter;
   };
 };
-for (let i = 0; i < pGroup.length; i++) {
-  pGroup[i].addEventListener('click', f1());
+for (let i = 0; i < groupEl.length; i++) {
+  groupEl[i].addEventListener('click', f1());
 }
 const data = [
   {
