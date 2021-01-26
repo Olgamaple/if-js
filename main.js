@@ -86,16 +86,16 @@ function sum(a) {
 console.log(sum(5)(2));
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const groupEl = document.querySelectorAll('p');
-const f1 = () => {
+const groupEl = document.querySelectorAll('.text');
+const count = () => {
   let counter = 0;
   return event => {
     event.target.style.color = colors[counter];
-    counter = counter === colors.length ? 0 : counter;
+    counter = counter === colors.length ? 0 : counter + 1;
   };
 };
 for (let i = 0; i < groupEl.length; i++) {
-  groupEl[i].addEventListener('click', f1());
+  groupEl[i].addEventListener('click', count());
 }
 const data = [
   {
